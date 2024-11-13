@@ -1,3 +1,5 @@
+"use client";
+
 import { MainLayout } from '@/components/MainLayout';
 import { TelegramButton } from '@/components/TelegramButton';
 import Link from 'next/link';
