@@ -1,28 +1,23 @@
-import './globals.css';
-import type { Metadata } from 'next';
+"use client";
+
 import Script from 'next/script';
-import { TonConnectProvider } from '@/components/TonConnectProvider';
+import { ReactNode } from 'react';
+import { MainLayout } from '@/components/MainLayout';
 
-export const metadata: Metadata = {
-  title: 'Telegram Web App',
-  description: 'Telegram Web App with TON Connect',
-};
+interface LayoutProps {
+  children: ReactNode;
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en">
-      <head>
-        <Script src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive" />
-      </head>
-      <body>
-        <TonConnectProvider>
-          {children}
-        </TonConnectProvider>
-      </body>
-    </html>
+    <MainLayout>
+      {/* Замените strategy на afterInteractive */}
+      <Script src="https://example.com/some-script.js" strategy="afterInteractive" />
+
+      {/* Основное содержимое приложения */}
+      <div>
+        {children}
+      </div>
+    </MainLayout>
   );
 }
