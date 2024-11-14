@@ -3,7 +3,7 @@
 import { MainLayout } from '@/components/MainLayout';
 import { TelegramButton } from '@/components/TelegramButton';
 import Link from 'next/link';
-import TelegramLogin from '@/components/TelegramLogin';
+
 
 export default function Home() {
   return (
