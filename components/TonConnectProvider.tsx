@@ -1,16 +1,30 @@
-'use client';
+// components/TonConnectProvider.tsx
 
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
-import { ReactNode } from 'react';
+import React, { useEffect } from 'react';
 
-interface TonConnectProviderProps {
-  children: ReactNode;
-}
+const TonConnectProvider = () => {
+  useEffect(() => {
+    // Логика подключения к TonConnect с использованием чистого JS или альтернативных библиотек.
+    // Например, можно использовать axios или window.fetch().
 
-export function TonConnectProvider({ children }: TonConnectProviderProps) {
+    // Пример использования fetch для подключения к API:
+    fetch('https://api.tonconnect.io', {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('TonConnect API response:', data);
+      })
+      .catch((error) => {
+        console.error('Ошибка подключения к TonConnect:', error);
+      });
+  }, []);
+
   return (
-    <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/ton-community/tutorials/main/03-wallet/test/public/tonconnect-manifest.json">
-      {children}
-    </TonConnectUIProvider>
+    <div>
+      <p>TonConnect Provider</p>
+    </div>
   );
-}
+};
+
+export default TonConnectProvider;
