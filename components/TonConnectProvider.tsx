@@ -1,13 +1,11 @@
 // components/TonConnectProvider.tsx
+"use client";
 
 import React, { useEffect } from 'react';
 
 const TonConnectProvider = () => {
   useEffect(() => {
     // Логика подключения к TonConnect с использованием чистого JS или альтернативных библиотек.
-    // Например, можно использовать axios или window.fetch().
-
-    // Пример использования fetch для подключения к API:
     fetch('https://api.tonconnect.io', {
       method: 'GET',
     })
